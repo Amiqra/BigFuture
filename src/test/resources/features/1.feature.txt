@@ -1,0 +1,20 @@
+Feature: 
+
+	#{color:#de350b}*USER STORY*{color}
+	#
+	# *As a truck driver I should be able to access* 
+	# *Vehicle Costs page*
+	#
+	#{color:#de350b}*ACCEPTANCE CRITERIA*{color}
+	#
+	#{color:#de350b}1{color}.Verify that truck driver should be able to see all cars' cost informations on the Vehicle Costs
+	# page. 
+	# {color:#de350b}2{color}.Verify that truck driver should be able to create Vehicle cost and cancel it.
+	# {color:#de350b}3.{color}Verify that truck driver should be able to edit or delete Vehicle cost
+	# {color:#de350b}4.{color} Verify that truck driver should be able to add Attachment on General information
+	# page by click on any of the car on the grid.
+	#{color:#de350b}5{color}.Verify that truck driver should be able to reset the grid by clicking on Grit setting
+	@EUG2-114 @EUG2-97
+	Scenario: Truck driver- see all cars' costs- Asli
+		When truckdriver log in 
+		Then he shoul see mainpage

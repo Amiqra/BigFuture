@@ -7,12 +7,17 @@ import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import java.util.concurrent.TimeUnit;
+
 public class Hooks {
 
-    // hooks we wanna run it in certain circumstantes..
+    // hooks we wanna run it in certain circumstanses..
 
     @Before
     public void setUp(){
+
+        Driver.get().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+
         System.out.println("\tthis is coming from BEFORE");
     }
 
@@ -27,7 +32,6 @@ public class Hooks {
         Driver.closeDriver();
 
     }
-
 
     @Before("@db")
     public void setUpdb(){
