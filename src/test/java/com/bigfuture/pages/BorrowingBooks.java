@@ -13,8 +13,16 @@ public class BorrowingBooks extends BasePage{
 
 @FindBy (xpath = "//a[@href='javascript:void(0)']")
 
-public List<WebElement> str1;
+public List<WebElement> rtrnBrrw;
 
+
+
+public WebElement retrnBrrw(int i){
+
+    return Driver.get().findElement(By.xpath("(//a[@href='javascript:void(0)'])["+i+"]" ));
+
+
+}
 
 
 
@@ -23,4 +31,12 @@ public WebElement getReturned(int i) {
     return Driver.get().findElement(By.xpath("//tr[" + i+ "]//td[6]" ));
 
 }
+
+    public WebElement getBorowedBy(int i) {
+
+        return Driver.get().findElement(By.xpath("//tr[" + i+ "]//td[7]" ));
+
+    }
+
+
 }
