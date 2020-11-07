@@ -17,17 +17,17 @@ Feature:
 	#|15|
 	#|50|
 	#|100|
-	@EUG2-169 @EUG2-164
+
 	Scenario: As a librarian, I should be able to see book records on user page (LibraryCT-Akay))
 		Background:
 		    Given The librarian should be able to see book records on user page
-		
+
 		Scenario:As a librarian I should be able to see book records on user page 
 		     When librarian on the Dashboard page
 		     And librarian clicks the "Users" button
 		     Then librarian verify to see 10 record as a default
-		     
-		Scenario:As a librarian, I should be able to close Add User page.
+		@EUG2-test
+		Scenario:As a librarian, I should be able to see count options.
 		     When librarian on the Dashboard page
 		     And librarian clicks the "Users" button
 		     Then librarian clicks "show records" button

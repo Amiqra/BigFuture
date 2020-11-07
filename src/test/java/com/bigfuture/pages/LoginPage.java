@@ -34,10 +34,19 @@ public class LoginPage {
         passWord.sendKeys(password);
         signIn.click();
 
+    }
+
+    public void loginAsLibrarian() {
+
+        String username = ConfigurationReader.get("username_L");
+        String password = ConfigurationReader.get("password_L");
+
+        loginEmail.sendKeys(username);
+        passWord.sendKeys(password);
+        signIn.click();
+
 
 
     }
-
-
 
 }

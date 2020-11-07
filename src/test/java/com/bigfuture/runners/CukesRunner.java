@@ -12,10 +12,9 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",  // file kodlari yer aliyor
           glue = "com/bigfuture/step_def",  // java kodlari
         dryRun= false,
-         tags= "@defaultTable"
+         tags= "@EUG2-171"
 
-
-        //http://library2.cybertekschool.com/login.html
+        // active tagleri bulup silmek icin CMD+SHIFT+F
 
 )
 public class CukesRunner {
