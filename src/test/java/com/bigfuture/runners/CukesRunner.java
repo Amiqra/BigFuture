@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",  // file kodlari yer aliyor
           glue = "com/bigfuture/step_def",  // java kodlari
         dryRun= false,
-         tags= "@EUG2-171"
+         tags= "@EUG2-170"
 
         // active tagleri bulup silmek icin CMD+SHIFT+F
 

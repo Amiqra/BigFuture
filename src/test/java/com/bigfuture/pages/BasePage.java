@@ -16,7 +16,7 @@ public abstract class BasePage {
 
 
     public void navigateToModule(String tab) {
-        String tabLocator = "//a[normalize-space()='"+tab+ "' and contains(@class, 'title')]";
+        String tabLocator = "//span[normalize-space()='"+tab+ "'and contains(@class,'title')]";
         //String moduleLocator = "//a[normalize-space()='"+ module + "' and contains(@href, '/bank/redirect.html?url=')]";
         try {
             BrowserUtils.waitForClickablility(By.xpath(tabLocator), 5);
