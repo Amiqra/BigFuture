@@ -17,5 +17,5 @@ Feature:
 
 		When the student is on the "Books" module
 		When The borrowed by cell of any book should be empty
-		Then the student should be able to click "Borrow book" button
+	    Then the student should be able to click "Borrow book" button
 		Then "Borrow book" button should be disabled.

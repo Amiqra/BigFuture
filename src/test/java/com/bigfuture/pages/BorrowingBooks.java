@@ -32,7 +32,7 @@ public WebElement getReturned(int i) {
 
 }
 
-    public WebElement getBorowedBy(int i) {
+    public WebElement getBorrowedBy(int i) {
 
         return Driver.get().findElement(By.xpath("//tr[" + i+ "]//td[7]" ));
 

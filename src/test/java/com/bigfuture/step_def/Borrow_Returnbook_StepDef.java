@@ -11,6 +11,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -24,15 +25,7 @@ public class Borrow_Returnbook_StepDef {
     List<WebElement> actionBtn;
 
 
-    @Given("the student in login page")
-    public void the_student_in_login_page() {
-        String url = ConfigurationReader.get("url");
-        Driver.get().get(url);
 
-        new LoginPage().loginAsStudent();
-        BrowserUtils.waitFor(3);
-
-    }
 
     @When("the student should navigate to {string} module")
     public void the_student_should_navigate_to_module(String string) {
@@ -59,7 +52,9 @@ public class Borrow_Returnbook_StepDef {
             boolean isdisabled= disabled.contains("disabled");
 
 
-             if(!isdisabled){
+
+
+             if(isdisabled){
 
                  System.out.println(new BorrowingBooks().getReturned(i).getText() + " tiklamadan once");
 
@@ -69,7 +64,7 @@ public class Borrow_Returnbook_StepDef {
 
               String actual= new BorrowingBooks().getReturned(i).getText();
 
-               Assert.assertEquals(string2, actual);
+               Assert.assertEquals("Verify Returned message displayed", string2, actual);
 
                  System.out.println(string2);
                  System.out.println(actual);
@@ -106,16 +101,19 @@ public class Borrow_Returnbook_StepDef {
     public void the_borrowed_by_cell_of_any_book_should_be_empty() {
 
         actionBtn = new BorrowingBooks().rtrnBrrw;
+        System.out.println(actionBtn.size());
+
 
         for (row = 1; row <= actionBtn.size(); row++) {
 
+            System.out.println(new BorrowingBooks().getBorrowedBy(row).getText());
 
-            System.out.println(new BorrowingBooks().getBorowedBy(row).getText());
+            if ( new BorrowingBooks().getBorrowedBy(row).getText().isEmpty() ) {
 
-            if ( new BorrowingBooks().getBorowedBy(row).getText().isEmpty() ) {
+               // System.out.println(row + " "+ new BorrowingBooks().getBorowedBy(row).getText());
+                //System.out.println(row + " "+ new BorrowingBooks().getBorowedBy(row).getText().isEmpty());
+                //System.out.println("asli");
 
-                System.out.println(row + " "+ new BorrowingBooks().getBorowedBy(row).getText().isEmpty());
-                System.out.println("asli");
                 String disabled= new BorrowingBooks().retrnBrrw(row).getAttribute("class");
 
                 System.out.println(disabled + "asli");
@@ -126,8 +124,25 @@ public class Borrow_Returnbook_StepDef {
 
                 Assert.assertTrue(!isdisabled);
 
+
+                new BorrowingBooks().retrnBrrw(row).click();
+
+
+                BrowserUtils.waitFor(5);
+
+              //  System.out.println(row-1 + " hdjshdjshjd");
+//        BrowserUtils.waitFor(5);
+//                WebDriverWait wait2 = new WebDriverWait(Driver.get(), 10);
+//         wait2.until(ExpectedConditions.elementToBeClickable(actionBtn.get(row-1)));
+//               actionBtn.get(row-1).click();
+
+          //      Assert.assertTrue(actionBtn.get(row-1).getAttribute("class").contains("disabled"));
+//        BrowserUtils.waitFor(5);
+
               //  BrowserUtils.waitFor(3);
-               // the_student_should_be_able_to_click_button("Borrow book");
+
+
+               the_student_should_be_able_to_click_button("Borrow book");
 
               //  button_should_be_disabled("Borrow book");
        }
@@ -139,25 +154,25 @@ public class Borrow_Returnbook_StepDef {
     @Then("the student should be able to click {string} button")
     public void the_student_should_be_able_to_click_button(String string) {
 
+        new BorrowingBooks().retrnBrrw(row).click();
 
-        System.out.println(row);
-        System.out.println(actionBtn.get(row).getText() + " asli");
-//        WebDriverWait wait2 = new WebDriverWait(Driver.get(), 10);
-//        wait2.until(ExpectedConditions.elementToBeClickable(actionBtn.get(row)));
-
-        actionBtn.get(row).click();
+//        System.out.println(actionBtn.get(row).getText() + " asli");
+////        WebDriverWait wait2 = new WebDriverWait(Driver.get(), 10);
+////        wait2.until(ExpectedConditions.elementToBeClickable(actionBtn.get(row)));
+//
+//        actionBtn.get(row).sendKeys(Keys.ENTER);
 
         BrowserUtils.waitFor(5);
     }
-
-
-    @Then("{string} button should be disabled.")
-    public void button_should_be_disabled(String string) {
-
-
-       Assert.assertTrue(actionBtn.get(row).getAttribute("class").contains("disabled"));
-
-
-    }
+//
+//
+//    @Then("{string} button should be disabled.")
+//    public void button_should_be_disabled(String string) {
+//
+//
+//       Assert.assertTrue(actionBtn.get(row).getAttribute("class").contains("disabled"));
+//
+//        BrowserUtils.waitFor(5);
+//    }
 
 }
