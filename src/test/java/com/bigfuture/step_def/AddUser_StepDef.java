@@ -63,11 +63,6 @@ public class AddUser_StepDef {
         Select status = new Select(usersPage.dropdown2);
         status.selectByValue("ACTIVE");
 
-        /**
-         * •	Select carsList = new Select(el)
-         * •	carList.getSelectedOptions(): //returns the the selected options a list ( List<webelement>)
-         * •	for each : carList.getSelectedOptions()
-         */
 
         BrowserUtils.waitFor(1);
         usersPage.startDate.clear();
@@ -80,11 +75,6 @@ public class AddUser_StepDef {
 
         usersPage.address.sendKeys("Spring st, New York, USA, 20002");
         usersPage.save.click();
-
-//        BrowserUtils.waitFor(2);
-//        usersPage.addUser.click();
-//        BrowserUtils.waitFor(2);
-//        usersPage.close.click();
 
     }
 
