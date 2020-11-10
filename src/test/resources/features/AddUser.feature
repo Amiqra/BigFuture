@@ -1,4 +1,4 @@
-@wip
+
 Feature: Add User
 
 Background:
@@ -11,14 +11,14 @@ Scenario:As a librarian, I should be able to add users from Users page.
   And  create new user using following information
     | Full Name  | Sarah White                     |
     | Password   | 1234                            |
-    | Email      | shwhiter@gmail.com               |
+    | Email      | shwhiter@gmail.com              |
     | User Group | Student                         |
     | Status     | Active                          |
     | Start Date | 2020-11-11                      |
     | End Date   | 2025-10-10                      |
     | Address    | Spring st, New York, USA, 20002 |
   Then click the "Save Changes" button
-@wip
+
 Scenario:As a librarian, I should be able to close Add User page.
 
   Then click the "Add User" button
