@@ -18,6 +18,12 @@ public class UsersPage extends BasePage {
     @FindBy(xpath = "//input[@name='email']")
     public WebElement email;
 
+    @FindBy(xpath = "(//label[@class='control-label'])[6]")
+    public WebElement userGroup;
+
+    @FindBy(xpath = "(//label[@class='control-label'])[7]")
+    public WebElement status;
+
     @FindBy(xpath = "//select[@id='user_group_id']")
     public WebElement dropdown1;
 
@@ -44,6 +50,9 @@ public class UsersPage extends BasePage {
 
     @FindBy(xpath = "//div[@id='tbl_users_length']")
     public WebElement getDropdownTable;
+
+    @FindBy(xpath = "(//a[@href='javascript:void(0)'])[1]")
+    public WebElement edit;
 
 
 }
