@@ -1,5 +1,4 @@
 package com.bigfuture.runners;
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -14,7 +13,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",  // file kodlari yer aliyor
         glue = "com/bigfuture/step_def",  // java kodlari
         dryRun = false,
-        tags = "@EUG2-test"
+        tags = "@EUG2-176"
 
         // active tagleri bulup silmek icin CMD+SHIFT+F
 

@@ -16,7 +16,7 @@ public class Hooks {
     @Before
     public void setUp(){
 
-        Driver.get().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        Driver.get().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
         System.out.println("\tthis is coming from BEFORE");
     }
